@@ -37,8 +37,8 @@ file '/etc/apache2/conf-available/serve-cgi-bin.conf' do
 	</IfModule>
 
 	<IfDefine ENABLE_USR_LIB_CGI_BIN>
-		ScriptAlias /cgi-bin/ /var/www/html/cgi-bin
-		<Directory "/var/www/html/cgi-bin">
+		ScriptAlias /cgi-bin/ /var/www/html/cgi-bin/
+		<Directory "/var/www/html/cgi-bin/">
 			AllowOverride None
 			Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
 			Require all granted
