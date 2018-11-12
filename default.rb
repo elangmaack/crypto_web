@@ -14,6 +14,8 @@ template '/var/www/html/index.html' do
   source 'index.html.erb'
 end
 
+directory '/var/www/html/cgi-bin'
+
 template '/var/www/html/cgi-bin/print_all_positions_html.py' do
   source 'print_all_positions_html.erb'
   mode 0755
