@@ -28,6 +28,7 @@ end
 
 template '/etc/apache2/apache2.conf' do
   source 'apache2.erb'
+end
 
 file '/etc/apache2/conf-available/serve-cgi-bin.conf' do
   content '<IfModule mod_alias.c>
