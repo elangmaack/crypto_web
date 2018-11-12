@@ -26,6 +26,9 @@ template '/var/www/html/cgi-bin/my_positions.txt' do
   mode 0755
 end
 
+template '/etc/apache2/apache2.conf' do
+  source 'apache2.erb'
+
 file '/etc/apache2/conf-available/serve-cgi-bin.conf' do
   content '<IfModule mod_alias.c>
 	<IfModule mod_cgi.c>
