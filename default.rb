@@ -14,7 +14,9 @@ template '/var/www/html/index.html' do
   source 'index.html.erb'
 end
 
-directory '/var/www/html/cgi-bin'
+directory '/var/www/html/cgi-bin' do
+  mode 0755
+end
 
 template '/var/www/html/cgi-bin/print_all_positions_html.py' do
   source 'print_all_positions_html.erb'
@@ -42,7 +44,7 @@ file '/etc/apache2/conf-available/serve-cgi-bin.conf' do
 
 	<IfDefine ENABLE_USR_LIB_CGI_BIN>
 		ScriptAlias /cgi-bin/ /var/www/html/cgi-bin/
-		<Directory "/var/www/html/cgi-bin/">
+		<Directory "/var/www/html/cgi-bin">
 			AllowOverride None
 			Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
 			Require all granted
