@@ -13,3 +13,5 @@ chef generate template cookbooks/learn_chef_apache2 index.html
 cp crypto_web/*.rb cookbooks/learn_chef_apache2/recipes
 cp crypto_web/*.erb cookbooks/learn_chef_apache2/templates
 sudo chef-client --local-mode --runlist 'recipe[learn_chef_apache2]'
+sudo a2enmod cgi
+sudo service apache2 restart
