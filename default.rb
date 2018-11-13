@@ -4,7 +4,6 @@ apt_update 'Update the apt cache daily' do
 end
 
 package 'apache2'
-apache_module 'cgi'
 
 template '/var/www/html/index.html' do
   source 'index.html.erb'
