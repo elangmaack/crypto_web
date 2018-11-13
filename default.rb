@@ -5,11 +5,6 @@ end
 
 package 'apache2'
 
-service 'apache2' do
-  supports status: true
-  action [:enable, :start]
-end
-
 template '/var/www/html/index.html' do
   source 'index.html.erb'
 end
@@ -55,4 +50,9 @@ file '/etc/apache2/conf-available/serve-cgi-bin.conf' do
 	</IfDefine>
 </IfModule>
 '
+end
+
+service 'apache2' do
+  supports status: true
+  action [:enable, :start]
 end
