@@ -4,6 +4,7 @@ apt_update 'Update the apt cache daily' do
 end
 
 package 'apache2'
+python_runtime '2'
 
 template '/var/www/html/index.html' do
   source 'index.html.erb'
